@@ -7,7 +7,8 @@ export default class ServerlessOfflineDotEnv
 		@encoding = options['dotenv-encoding'] || 'utf-8'
 
 		@hooks = {
-			'before:offline:start:init': @run.bind(this)
+			'before:offline:init': @run.bind this
+			'before:offline:start:init': @run.bind this
 		}
 
 	run: ->
