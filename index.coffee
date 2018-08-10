@@ -14,7 +14,7 @@ export default class ServerlessOfflineDotEnv
 		return new Promise (resolve) =>
 			oldenv = @serverless.service.provider.environment
 			dotenv = @dotenv()
-			newenv = Object.assign dotenv, oldenv
+			newenv = Object.assign oldenv, dotenv
 
 			@serverless.service.provider.environment = newenv
 
