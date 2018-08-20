@@ -1,6 +1,6 @@
 {
   "name": "@emerald-js/serverless-offline-dotenv",
-  "version": "0.0.8",
+  "version": "0.0.12",
   "main": "index",
   "license": "MIT",
   "private": false,
