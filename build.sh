@@ -5,9 +5,9 @@ yellow='\033[33m'
 green='\033[32m'
 clear='\033[m'
 
-for input in src{/**,}/*.coffee
+for input in *.coffee
 do
-    output="$(sed 's/\.coffee$/\.js/' <<< "${input:4}")"
+    output="$(sed 's/\.coffee$/\.js/' <<< "${input}")"
 
     echo -e "${yellow}>${clear} ${green}${input}${clear} to ${green}${output}${clear}";
     coffee -to "${output}" "${input}"
