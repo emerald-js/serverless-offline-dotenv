@@ -9,6 +9,8 @@ export default class ServerlessOfflineDotEnv
 		@hooks = {
 			'before:offline:init': @run.bind this
 			'before:offline:start:init': @run.bind this
+			'before:invoke:invoke': @run.bind this
+			'before:invoke:local:invoke': @run.bind this
 		}
 
 	run: ->
