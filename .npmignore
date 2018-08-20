@@ -1,7 +1,5 @@
 *.coffee
-.babelrc
 build.sh
-clean-up.sh
-
+/src
 /test
 /.idea

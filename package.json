@@ -3,6 +3,7 @@
   "version": "0.0.8",
   "main": "index",
   "license": "MIT",
+  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/emerald-js/serverless-offline-dotenv.git"
@@ -14,7 +15,6 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-plugin-transform-es2015-modules-commonjs-optimized": "^6.16.0",
-    "babel-preset-env": "^1.7.0",
     "coffeescript": "^2.3.1",
     "jest": "^23.2.0",
     "jest-preset-coffeescript": "^1.0.0"
@@ -23,9 +23,13 @@
     "preset": "jest-preset-coffeescript"
   },
   "scripts": {
-    "build": "bash ./build.sh",
-    "test": "jest",
-    "prepare": "bash ./build.sh",
-    "postpublish": "bash ./clean-up.sh"
+    "prepublish": "bash ./build.sh",
+    "postpublish": "yarn cleanup",
+    "cleanup": "rm ./*.js"
+  },
+  "babel": {
+    "plugins": [
+      "transform-es2015-modules-commonjs-optimized"
+    ]
   }
 }
